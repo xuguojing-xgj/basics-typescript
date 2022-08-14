@@ -39,3 +39,16 @@ function fn3<T extends inter>(a: T): number {
 fn3({
     length: 18
 })
+
+
+/**
+ * 在类中使用 泛型
+ */
+class MyClass<T>{
+    name: T;
+    constructor(name: T) {
+        this.name = name
+    }
+}
+
+const mc = new MyClass('小明')
