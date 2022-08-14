@@ -51,4 +51,4 @@ class MyClass<T>{
     }
 }
 
-const mc = new MyClass('小明')
+const mc = new MyClass<string>('小明')
