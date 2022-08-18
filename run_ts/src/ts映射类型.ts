@@ -32,6 +32,8 @@ type newPerson = Readonly<Person>
 type newPartial = Partial<Person>
 // newPartial === {name?: string; age?: number}
 
+
+
 // Pick 返回部分属性 (自选返回属性)
 
 // 源码：
@@ -68,3 +70,16 @@ function a<T, K extends keyof T>(obj: T, keys: K[]): Pick<T, K> {
     return res
 }
 console.log(a(info, ['name', 'age']));
+
+// Required 去掉可选属性
+
+// 源码：
+
+/**
+ * type Required<T> = {
+    [P in keyof T]-?: T[P];
+    };
+ */
+
+type newRequired = Required<Person>
+// newRequired === {name: string, age: numbers}
