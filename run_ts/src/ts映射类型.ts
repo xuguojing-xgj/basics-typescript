@@ -31,3 +31,40 @@ type newPerson = Readonly<Person>
 
 type newPartial = Partial<Person>
 // newPartial === {name?: string; age?: number}
+
+// Pick 返回部分属性 (自选返回属性)
+
+// 源码：
+
+/**
+ * type Pick<T, K extends keyof T> = {
+    [P in K]: T[P];
+    };
+ */
+
+type newPick = Pick<Person, "name">;
+// person5 === {name: string}
+
+/**
+ * 详解 pick 
+ */
+interface Info {
+    name: string,
+    age: number,
+    address: string
+}
+
+const info: Info = {
+    name: '小明',
+    age: 18,
+    address: '无'
+}
+
+function a<T, K extends keyof T>(obj: T, keys: K[]): Pick<T, K> {
+    let res: any = {}
+    keys.map(key => {
+        res[key] = obj[key]
+    })
+    return res
+}
+console.log(a(info, ['name', 'age']));
