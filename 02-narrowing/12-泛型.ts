@@ -27,7 +27,7 @@ function fn2<T, K>(a: T, b: K): K {
 }
 fn2<string, number>('小敏', 18)
 /**
- * 在泛型上 搜小T 的返回类型 
+ * 在泛型上 缩小T 的返回类型 使用 extends 
  * 定义接口 泛型返回类型 缩小到接口定义的类型中
  */
 interface inter {
