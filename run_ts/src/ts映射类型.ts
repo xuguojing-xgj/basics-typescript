@@ -18,3 +18,16 @@ type newPerson = Readonly<Person>
 //     Readonly name: string,
 //     Readonly age?: number
 // }
+
+// Partial可选 将type 属性类型 为 可选?:
+// 源码
+
+/**
+ * 
+ * type Partial<T> = {
+    [P in keyof T]?: T[P];
+    };
+ */
+
+type newPartial = Partial<Person>
+// newPartial === {name?: string; age?: number}
