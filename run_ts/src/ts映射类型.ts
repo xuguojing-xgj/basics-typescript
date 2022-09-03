@@ -1,11 +1,18 @@
-// typescript内置了Readonly、Partial、Pick、Record、Required五个高级类型
+// typescript内置了Readonly、Partial、Pick、Record、Required Omit 高级类型
+
+/**
+* Required 将type类型全部变为 必填属性的高级类型
+* Partial + ReadOnly 将type 数据 全部变为可选 的 高级类型
+* Omit 剔除不需要的属性
+*/
+
 // Readonly只读 举例
 interface Person {
     name: string;
     age?: number;
 }
 
-// Readonly只读 源码
+// Readonly只读 源码 ↓
 /**
  * type Readonly<T> = {
     readonly [P in keyof T]: T[P];
@@ -20,8 +27,7 @@ type newPerson = Readonly<Person>
 // }
 
 // Partial可选 将type 属性类型 为 可选?:
-// 源码
-
+// 源码 ↓
 /**
  * 
  * type Partial<T> = {
@@ -36,7 +42,7 @@ type newPartial = Partial<Person>
 
 // Pick 返回部分属性 (自选返回属性)
 
-// 源码：
+// 源码：↓
 
 /**
  * type Pick<T, K extends keyof T> = {
@@ -45,7 +51,6 @@ type newPartial = Partial<Person>
  */
 
 type newPick = Pick<Person, "name">;
-// person5 === {name: string}
 
 /**
  * 详解 pick 
@@ -71,9 +76,9 @@ function a<T, K extends keyof T>(obj: T, keys: K[]): Pick<T, K> {
 }
 console.log(a(info, ['name', 'age']));
 
-// Required 去掉可选属性
+// Required 去掉可选属性 全部为必选
 
-// 源码：
+// 源码：↓
 
 /**
  * type Required<T> = {
@@ -97,3 +102,5 @@ let ObjPick: PickType = {
     name:'小明',
     age: 18
 }
+
+
