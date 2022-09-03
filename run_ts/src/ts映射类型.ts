@@ -83,3 +83,17 @@ console.log(a(info, ['name', 'age']));
 
 type newRequired = Required<Person>
 // newRequired === {name: string, age: numbers}
+
+
+// Pick 主要⽤于提取某种数据类型的必选属性
+interface Books {
+    name: string,
+    age: number,
+    fn: () => void
+}
+
+const PickType = Pick<Books, 'name' | 'age'>;
+let ObjPick: PickType = {
+    name:'小明',
+    age: 18
+}
