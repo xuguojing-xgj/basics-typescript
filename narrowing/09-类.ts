@@ -29,10 +29,14 @@ const newPerSon = new person('小明', 18)
 console.log(newPerSon)
 
 class ListNode {
-  public val: number; // 类中的 public 为
+  public name: string; // 类中的 public 为公共属性 在外部也可以进行访问
   public next: ListNode|null = null;
   constructor(value: number) {
-    this.val = value;
+    this.name = value;
     this.next = null;
   }
 }
+
+let L = new ListNode()
+
+console.log(L.name) 
