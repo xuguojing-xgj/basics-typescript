@@ -27,3 +27,12 @@ class person {
 
 const newPerSon = new person('小明', 18)
 console.log(newPerSon)
+
+class ListNode {
+  public val: number; // 类中的 public 为
+  public next: ListNode|null = null;
+  constructor(value: number) {
+    this.val = value;
+    this.next = null;
+  }
+}
