@@ -97,7 +97,7 @@ interface Books {
     fn: () => void
 }
 
-const PickType = Pick<Books, 'name' | 'age'>;
+type PickType = Pick<Books, 'name' | 'age'>;
 let ObjPick: PickType = {
     name:'小明',
     age: 18
