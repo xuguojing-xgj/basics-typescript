@@ -35,7 +35,7 @@ loggingIdentity({ length: 10, value: 3 }); // 在使用时 必须传入对应的
   
 // 在类型约束上使用 类型参数
   
-function getProperty<T, K>(obj: T, key: K) {
+function getProperty<T, K extends keyof T >(obj: T, key: K) {
   return obj[key]  
 }
   
