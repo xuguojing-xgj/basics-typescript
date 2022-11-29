@@ -45,3 +45,33 @@ const _tree: Tree<string> = {
 }
 
 
+/**
+ * 泛型约束
+ */
+
+interface point {
+    x: number,
+    y: number
+}
+function identity<T extends point>(x: T): T {
+    return x
+}
+
+identity({ x: 0, y: 0 })
+// 对于一个形式类型参数,可以同时定义泛型约束和默认类型,但默认类型必须满足泛型约束
+// <TypeParameter extends ConstraintType = DefaultType>
+
+// 在该语法中, 默认类型位于泛型约束之后, 类型参数T 的泛型约束为number类型, 默认类型为数字字面类型的联合类型
+function _fn<T extends number = 0 | 1>(num: T): T {
+    return num
+ }
+//  <T extends number = 0 | 1> 约束后的泛型 T DefaultType 为 number 类型的 0 | 1
+_fn<100>(100)
+
+// 如果泛型形式类型参数定义了泛型约束, 那么函数传入的实际类型参数必须符合泛型约束, 否则将抛出错误
+
+function _p<T extends boolean>() {}
+_p<true>()
+_p<false>()
+_p<boolean>()
+// _p<string>() ->  类型“string”不满足约束“boolean”
