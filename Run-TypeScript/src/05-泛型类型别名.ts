@@ -44,6 +44,35 @@ const _tree: Tree<string> = {
     }
 }
 
+interface _treeInt {
+    children?: _treeInt[],
+    label: string,
+    value: string,
+}
+interface _newTreeInt extends _treeInt {
+    age: number
+}
+const treeData: _newTreeInt = {
+    label: '小明',
+    value: '101',
+    age: 18,
+    children: [
+        {
+            label: '小红',
+            value: '102',
+            children: [
+                {
+                    label: '小绿',
+                    value: '104'
+                }
+            ]
+        },
+        {
+            label: '小紫',
+            value: '103'
+        }
+    ]
+}
 
 /**
  * 泛型约束
@@ -111,4 +140,6 @@ _p<boolean>()
 // 如果类型参数T没有声明泛型约束,那么类型参数T的基约束为空对象类型字面量 "{}" , 除了undefined类型和null类型外
 // 其他任何类型都可以赋值给空对象类型字面量
 
-// <T>   参数类型T的基约束类型为 空对象类型字面量 "{}" 
+// <T>   参数类型T的基约束类型为 空对象类型字面量 "{}"
+
+
