@@ -76,3 +76,20 @@ const content = new Content()
 content.name = '小明'
 content.age = 19
 console.log(content.sing('唱歌'));
+
+
+/**
+ * TypeScript 如何设计 Class 的声明？
+ */
+interface IComparable {
+    message: string
+}
+class Greeter implements IComparable {
+    message: string;
+    constructor(message: string) {
+        this.message = message
+    }
+}
+
+const greeter = new Greeter('这是一条设计class声明信息')
+console.log(greeter);
