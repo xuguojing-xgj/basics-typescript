@@ -18,3 +18,35 @@ let arr: NumberArray = [1, 2, 3];
  * 需要注意的是，在 TypeScript 中，接口是静态的，它不会像 JavaScript 那样随着对象的变化而变化。
  * 因此，接口只能用于描述对象的形状，而不能用于描述对象的值。
  */
+
+// Class 声明
+interface PersonalIntl {
+    name: string
+    sayHi(name: string): string
+}
+
+/**
+ * 在上面的代码中，PersonalIntl 是一个接口，它定义了一个对象必须具有的 name 属性和 sayHi() 方法，
+ * 并且这个方法接受一个字符串参数，并返回一个字符串。
+ * 这个接口类型可以用来约束一个对象，以确保它具有正确的形状。
+ */
+/**
+ * 在 TypeScript 中，我们可以使用 implements 关键字来实现一个接口。
+ * implements 关键字可以用于 class 类的接口使用
+ * 这意味着，我们定义的类必须拥有接口中定义的所有属性和方法。例如：
+ */
+// 实现 PersonalIntl 接口
+class Personal implements PersonalIntl {
+    // 实现接口中定义的 name 属性
+    name: string = ''
+    constructor() {}
+
+    // 实现接口中定义的 sayHi() 方法
+    sayHi(name: string): string {
+        return `Hello, ${name}. My name is ${this.name}.`
+    }
+}
+
+const personal = new Personal()
+personal.name = 'John Doe'
+console.log(personal.sayHi('Jane Doe')) // 应输出：Hello, Jane Doe. My name is John Doe.

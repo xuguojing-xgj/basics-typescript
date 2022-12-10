@@ -30,4 +30,4 @@ interface C {
 type W = Readonly<C>
 
 const _c: W = { name: '小明', age: 18 }
-_c.name = '小红'
+// _c.name = '小红'  -> 无法为“name”赋值，因为它是只读属性。
