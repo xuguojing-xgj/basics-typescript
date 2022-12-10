@@ -38,8 +38,10 @@ interface PersonalIntl {
 // 实现 PersonalIntl 接口
 class Personal implements PersonalIntl {
     // 实现接口中定义的 name 属性
-    name: string = ''
-    constructor() { }
+    name: string;
+    constructor(name: string) {
+        this.name = name
+     }
 
     // 实现接口中定义的 sayHi() 方法
     sayHi(name: string): string {
@@ -47,8 +49,7 @@ class Personal implements PersonalIntl {
     }
 }
 
-const personal = new Personal()
-personal.name = 'John Doe'
+const personal = new Personal('Tom')
 console.log(personal.sayHi('Jane Doe')) // 应输出：Hello, Jane Doe. My name is John Doe.
 
 /**
@@ -64,17 +65,19 @@ interface person {
 }
 
 class Content implements person {
-    name: string = '';
-    age: number = 18
+    name: string;
+    age: number;
+    constructor(name: string, age: number) {
+        this.name = name
+        this.age = age
+    }
 
     sing(sing: string): string {
         return `你好, 我是${this.name}, 今年${this.age}岁, 喜欢${sing}`
     }
 }
 
-const content = new Content()
-content.name = '小明'
-content.age = 19
+const content = new Content('小明', 18)
 console.log(content.sing('唱歌'));
 
 
