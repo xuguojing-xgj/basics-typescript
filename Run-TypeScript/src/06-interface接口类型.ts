@@ -39,7 +39,7 @@ interface PersonalIntl {
 class Personal implements PersonalIntl {
     // 实现接口中定义的 name 属性
     name: string = ''
-    constructor() {}
+    constructor() { }
 
     // 实现接口中定义的 sayHi() 方法
     sayHi(name: string): string {
@@ -56,3 +56,23 @@ console.log(personal.sayHi('Jane Doe')) // 应输出：Hello, Jane Doe. My name 
  * 我们在类中定义了名为 name 的属性和一个名为 sayHi() 的方法，这个方法接受一个字符串参数，并返回一个字符串。
  * 然后我们创建了一个 Personal 类的实例，并调用了它的 sayHi() 方法。
  */
+
+interface person {
+    name: string,
+    age: number,
+    sing(sing: string): string
+}
+
+class Content implements person {
+    name: string = '';
+    age: number = 18
+
+    sing(sing: string): string {
+        return `你好, 我是${this.name}, 今年${this.age}岁, 喜欢${sing}`
+    }
+}
+
+const content = new Content()
+content.name = '小明'
+content.age = 19
+console.log(content.sing('唱歌'));
