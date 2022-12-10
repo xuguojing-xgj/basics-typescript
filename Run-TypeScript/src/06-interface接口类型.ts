@@ -28,6 +28,38 @@ const keyVal: keyVal = {
 
 console.log(keyVal);
 
+interface DataType {
+    [key: string]: {
+        name: string,
+        age: number,
+        hobby: string,
+    }[];
+}
+const character: DataType = {
+    key1: [
+        {
+            name: '小明',
+            age: 18,
+            hobby: '跑步'
+        },
+        {
+            name: '小绿',
+            age: 18,
+            hobby: '无'
+        }
+    ],
+    key2: [
+        {
+            name: '小红',
+            age: 18,
+            hobby: '小明'
+        }
+    ],
+}
+
+console.log(character);
+
+
 /**
  * 上面的代码中，我们定义了一个 NumberArray 类型的变量 arr，并将其初始化为一个数字数组。
  * 因为 arr 的类型是 NumberArray，所以它必须满足接口的要求，即必须是一个具有数字索引的对象，
