@@ -9,6 +9,25 @@ interface NumberArray {
 }
 let arr: NumberArray = [1, 2, 3];
 
+interface keyVal {
+    [key: string]: {
+        value: string
+    }[];
+}
+
+const keyVal: keyVal = {
+    key: [
+        {
+            value: '101'
+        },
+        {
+            value: '102'
+        }
+    ]
+}
+
+console.log(keyVal);
+
 /**
  * 上面的代码中，我们定义了一个 NumberArray 类型的变量 arr，并将其初始化为一个数字数组。
  * 因为 arr 的类型是 NumberArray，所以它必须满足接口的要求，即必须是一个具有数字索引的对象，
@@ -41,7 +60,7 @@ class Personal implements PersonalIntl {
     name: string;
     constructor(name: string) {
         this.name = name
-     }
+    }
 
     // 实现接口中定义的 sayHi() 方法
     sayHi(name: string): string {
@@ -96,3 +115,5 @@ class Greeter implements IComparable {
 
 const greeter = new Greeter('这是一条设计class声明信息')
 console.log(greeter);
+
+
