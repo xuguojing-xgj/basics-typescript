@@ -50,3 +50,9 @@ class Personal implements PersonalIntl {
 const personal = new Personal()
 personal.name = 'John Doe'
 console.log(personal.sayHi('Jane Doe')) // 应输出：Hello, Jane Doe. My name is John Doe.
+
+/**
+ * 在上面的代码中，我们定义了一个 Personal 类，并实现了 PersonalIntl 接口。
+ * 我们在类中定义了名为 name 的属性和一个名为 sayHi() 的方法，这个方法接受一个字符串参数，并返回一个字符串。
+ * 然后我们创建了一个 Personal 类的实例，并调用了它的 sayHi() 方法。
+ */
