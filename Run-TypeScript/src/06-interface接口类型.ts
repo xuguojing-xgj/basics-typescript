@@ -8,6 +8,15 @@ interface NumberArray {
     [index: number]: number
 }
 let arr: NumberArray = [1, 2, 3];
+/**
+ * 上面的代码中，我们定义了一个 NumberArray 类型的变量 arr，并将其初始化为一个数字数组。
+ * 因为 arr 的类型是 NumberArray，所以它必须满足接口的要求，即必须是一个具有数字索引的对象，
+ * 并且其值都必须为数字。
+ */
+/**
+ * 需要注意的是，在 TypeScript 中，接口是静态的，它不会像 JavaScript 那样随着对象的变化而变化。
+ * 因此，接口只能用于描述对象的形状，而不能用于描述对象的值。
+ */
 
 interface keyVal {
     [key: string]: {
@@ -59,16 +68,56 @@ const character: DataType = {
 
 console.log(character);
 
+interface obj {
+    name: string;
+    age: number;
+}
+interface ArrObj {
+    [key: string]: obj[]
+}
 
-/**
- * 上面的代码中，我们定义了一个 NumberArray 类型的变量 arr，并将其初始化为一个数字数组。
- * 因为 arr 的类型是 NumberArray，所以它必须满足接口的要求，即必须是一个具有数字索引的对象，
- * 并且其值都必须为数字。
- */
-/**
- * 需要注意的是，在 TypeScript 中，接口是静态的，它不会像 JavaScript 那样随着对象的变化而变化。
- * 因此，接口只能用于描述对象的形状，而不能用于描述对象的值。
- */
+const list: ArrObj = {
+    key: [
+        {
+            name: '小明',
+            age: 19
+        }
+    ],
+    key1: [
+        {
+            name: '小绿',
+            age: 20
+        }
+    ]
+}
+console.log(list);
+
+interface Data {
+    data: {
+        name: string,
+        age: number
+    }[];
+    count: number;
+    content: {
+        hobby: string
+    }
+}
+
+const definitionData: Data = {
+    data: [
+        { name: '', age: 18 },
+        { name: '', age: 19 },
+    ],
+    count: 101,
+    content: {
+        hobby: ''
+    }
+}
+
+console.log(definitionData);
+
+
+
 
 // Class 声明
 interface PersonalIntl {
