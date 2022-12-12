@@ -116,6 +116,23 @@ const definitionData: Data = {
 
 console.log(definitionData);
 
+interface defaultData {
+    strData: {
+        data: string[]
+    }[]
+}
+
+const _data: defaultData = {
+    strData: [
+        {
+            data: ['1', '3']
+        },
+        {
+            data: ['2', '4']
+        }
+    ]
+}
+console.log('_data', _data);
 
 
 
