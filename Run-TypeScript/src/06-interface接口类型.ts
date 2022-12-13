@@ -134,7 +134,41 @@ const _data: defaultData = {
 }
 console.log('_data', _data);
 
+interface List {
+    ActionName: string;
+    ActivityName: string,
+    CreateDate: string;
+    Msg: string;
+    NAME: string;
+    PositionName: string;
+}
 
+interface data {
+    list: List[]
+}
+
+const _int: data = {
+    list: [
+        {
+            ActionName: '',
+            ActivityName: '',
+            CreateDate: '',
+            Msg: '',
+            NAME: '',
+            PositionName: '',
+        },
+        {
+            ActionName: '',
+            ActivityName: '',
+            CreateDate: '',
+            Msg: '',
+            NAME: '',
+            PositionName: '',
+        }
+    ]
+}
+
+console.log('_int',_int.list);
 
 // Class 声明
 interface PersonalIntl {
