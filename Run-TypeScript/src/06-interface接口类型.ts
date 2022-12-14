@@ -168,7 +168,41 @@ const _int: data = {
     ]
 }
 
-console.log('_int',_int.list);
+console.log('_int', _int.list);
+
+
+interface PersonStyle {
+    name: string;
+    age: number;
+    hobby: string
+}
+
+interface ArrayPerson {
+    PersonStyle: PersonStyle[]
+}
+
+const _person: ArrayPerson = {
+    PersonStyle: [
+        {
+            name: '小明',
+            age: 18,
+            hobby: '小红',
+        },
+        {
+            name: '小红',
+            age: 18,
+            hobby: '小绿',
+        },
+        {
+            name: '小绿',
+            age: 18,
+            hobby: '小明'
+        }
+    ]
+}
+console.log('_person', _person);
+
+
 
 // Class 声明
 interface PersonalIntl {
