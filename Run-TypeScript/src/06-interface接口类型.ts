@@ -180,21 +180,23 @@ interface StudentStyle {
 }
 
 interface StudentTeacher {
+    SchoolName: string;
     TeacherStyle: {
         name: string;
         age: number;
         sex: string;
         occupation: string;
-    }
+    };
     StudentStyle: StudentStyle[]
 }
 
 const _StudentTeacher: StudentTeacher = {
+    SchoolName: '啥也不教大学',
     TeacherStyle: {
         name: '张三',
         age: 31,
         sex: '男',
-        occupation: '教师'
+        occupation: '首席教师'
     },
     StudentStyle: [
         {
