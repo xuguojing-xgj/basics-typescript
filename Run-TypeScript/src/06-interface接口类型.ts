@@ -171,36 +171,56 @@ const _int: data = {
 console.log('_int', _int.list);
 
 
-interface PersonStyle {
+interface StudentStyle {
     name: string;
     age: number;
-    hobby: string
+    sex: string;
+    hobby: string;
+    occupation: string;
 }
 
-interface ArrayPerson {
-    PersonStyle: PersonStyle[]
+interface StudentTeacher {
+    TeacherStyle: {
+        name: string;
+        age: number;
+        sex: string;
+        occupation: string;
+    }
+    StudentStyle: StudentStyle[]
 }
 
-const _person: ArrayPerson = {
-    PersonStyle: [
+const _StudentTeacher: StudentTeacher = {
+    TeacherStyle: {
+        name: '张三',
+        age: 31,
+        sex: '男',
+        occupation: '教师'
+    },
+    StudentStyle: [
         {
             name: '小明',
             age: 18,
+            sex: '男',
             hobby: '小红',
+            occupation: '学生'
         },
         {
             name: '小红',
             age: 18,
+            sex: '女',
             hobby: '小绿',
+            occupation: '学生'
         },
         {
             name: '小绿',
             age: 18,
-            hobby: '小明'
+            sex: '男',
+            hobby: '小明',
+            occupation: '学生'
         }
     ]
 }
-console.log('_person', _person);
+console.log('_StudentTeacher', _StudentTeacher);
 
 
 
