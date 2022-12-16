@@ -178,7 +178,9 @@ interface StudentStyle {
     hobby: string;
     occupation: string;
 }
-
+interface ListData {
+    AnimationName: string
+}
 interface StudentTeacher {
     SchoolName: string;
     TeacherStyle: {
@@ -186,6 +188,7 @@ interface StudentTeacher {
         age: number;
         sex: string;
         occupation: string;
+        ArrayData: ListData[];
     };
     StudentStyle: StudentStyle[]
 }
@@ -196,7 +199,15 @@ const _StudentTeacher: StudentTeacher = {
         name: '张三',
         age: 31,
         sex: '男',
-        occupation: '首席教师'
+        occupation: '首席教师',
+        ArrayData: [
+            {
+                AnimationName: '紫罗兰永恒花园',
+            },
+            {
+                AnimationName: 'Daring in the FRANXX',
+            }
+        ]
     },
     StudentStyle: [
         {
@@ -224,6 +235,13 @@ const _StudentTeacher: StudentTeacher = {
 }
 console.log('_StudentTeacher', _StudentTeacher);
 
+
+interface NewListType {
+    AnimationName: string;
+}
+let newList: NewListType[] = []
+newList = _StudentTeacher.TeacherStyle.ArrayData
+console.log(newList);
 
 
 // Class 声明
