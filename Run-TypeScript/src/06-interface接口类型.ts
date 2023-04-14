@@ -194,12 +194,12 @@ interface StudentTeacher {
 }
 
 const _StudentTeacher: StudentTeacher = {
-    SchoolName: '啥也不教大学',
+    SchoolName: '北京大学',
     TeacherStyle: {
         name: '张三',
         age: 31,
         sex: '男',
-        occupation: '首席教师',
+        occupation: '教师',
         ArrayData: [
             {
                 AnimationName: '紫罗兰永恒花园',
