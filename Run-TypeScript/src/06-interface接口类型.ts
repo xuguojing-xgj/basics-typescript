@@ -322,4 +322,4 @@ class Greeter implements IComparable {
 const greeter = new Greeter('这是一条设计class声明信息')
 console.log(greeter);
 
-
+const type: Array<number> = [1, 1, 2, 2]
